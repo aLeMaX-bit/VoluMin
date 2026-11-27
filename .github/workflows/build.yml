@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Ekstrak proyek
-        run: unzip -q QuietVolume.zip
+        run: unzip -q VoluMin.zip
 
       - uses: actions/setup-java@v4
         with:
@@ -24,9 +24,9 @@ jobs:
           gradle-version: 8.7
 
       - name: Build debug APK
-        run: gradle -p QuietVolume assembleDebug --no-daemon
+        run: gradle -p VoluMin assembleDebug --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
-          name: QuietVolume-debug-apk
-          path: QuietVolume/app/build/outputs/apk/debug/app-debug.apk
+          name: VoluMin-debug-apk
+          path: VoluMin/app/build/outputs/apk/debug/app-debug.apk
